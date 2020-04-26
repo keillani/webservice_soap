@@ -9,10 +9,15 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
 import javax.xml.ws.ResponseWrapper;
 import java.util.List;
 
 @WebService
+//@SOAPBinding(style= SOAPBinding.Style.RPC)
+//@SOAPBinding(style= SOAPBinding.Style.DOCUMENT, parameterStyle= SOAPBinding.ParameterStyle.BARE)
+@SOAPBinding(style= SOAPBinding.Style.DOCUMENT, parameterStyle= SOAPBinding.ParameterStyle.WRAPPED)
+
 public class EstoqueWS {
 
     private ItemDao dao = new ItemDao();
